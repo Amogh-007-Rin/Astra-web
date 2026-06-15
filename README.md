@@ -39,7 +39,7 @@
 git clone https://github.com/Amogh-007-Rin/Astra-web
 
 # ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴇxᴜꜱ
-ᴄᴅ Astra-web
+cd Astra-web
 
 # ʏᴏᴜ ᴄᴀɴ ꜰɪɴᴅ ʟɪꜱᴛ ᴏꜰ ᴡᴇʙꜱɪᴛᴇ ꜰᴏʟᴅᴇʀꜱ
 - ᴇxᴘʟᴏʀᴇ ᴛʜᴇ ᴡᴇʙꜱɪᴛᴇꜱ ᴛʜᴀᴛ ʏᴏᴜ ʟɪᴋᴇ

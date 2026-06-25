@@ -1217,6 +1217,10 @@ h1, h2, h3, h4 {
    16. Responsive — Mobile
    =========================== */
 @media (max-width: 767px) {
+  .nav-logo-text {
+    display: none;
+  }
+
   .card-grid-4,
   .card-grid-3,
   .card-grid-2 {

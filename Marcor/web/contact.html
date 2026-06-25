@@ -1,11 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Michael Dell Biography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Michael Dell</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="main.html">Dell &amp; CEO</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="reference.html">References</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="main.html">Dell &amp; CEO</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="reference.html">References</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero-small">
+    <div class="hero-content">
+      <h1 class="hero-title">GET IN TOUCH</h1>
+      <p class="hero-subtitle">Have a question or feedback about this site?</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Left: Contact Info -->
+        <div class="contact-info-panel fade-in">
+          <div class="label">Contact Info</div>
+          <div class="contact-info-item">
+            <span class="icon">📧</span>
+            <span>biography@example.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="icon">🌐</span>
+            <span>www.michaeldell-biography.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="icon">📍</span>
+            <span>Online — Educational Project</span>
+          </div>
+          <p class="contact-note">This is an educational biography website. For official Dell Technologies inquiries, please visit dell.com</p>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="form-card fade-in">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" required>
+              <span class="error-msg">Please enter your full name.</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-msg">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Correction">Correction</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-msg">Please select a subject.</span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="error-msg">Please enter your message.</span>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </form>
+          <div class="success-msg" id="successMsg">
+            <div class="check">✓</div>
+            <h3>Thank you!</h3>
+            <p>Your message has been noted.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h4>Michael Dell</h4>
+          <p>&copy; 2024 Michael Dell Biography</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="main.html">Dell &amp; CEO</a>
+          <a href="contact.html">Contact</a>
+          <a href="reference.html">References</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Educational project — not affiliated with Dell Technologies
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    // Hamburger Menu
+    const hamburgerBtn = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-menu a');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('active');
+    }));
+
+    // Scroll-Triggered Fade-In
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back to Top
+    const backToTop = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Contact Form Validation
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const fields = [
+        { id: 'fullName', type: 'text' },
+        { id: 'email', type: 'email' },
+        { id: 'subject', type: 'select' },
+        { id: 'message', type: 'textarea' }
+      ];
+
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        const group = input.closest('.form-group');
+        let isValid = true;
+
+        if (field.type === 'select') {
+          isValid = input.value !== '';
+        } else if (field.type === 'email') {
+          isValid = input.value.trim() !== '' && input.validity.valid;
+        } else {
+          isValid = input.value.trim() !== '';
+        }
+
+        if (!isValid) {
+          group.classList.add('error');
+          valid = false;
+        } else {
+          group.classList.remove('error');
+        }
+      });
+
+      if (valid) {
+        form.style.display = 'none';
+        successMsg.classList.add('show');
+        form.reset();
+      }
+    });
+  </script>
 </body>
 </html>

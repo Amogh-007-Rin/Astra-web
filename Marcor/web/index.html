@@ -1,12 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Dell — Biography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Michael Dell</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="main.html">Dell &amp; CEO</a>
+        <a href="contact.html">Contact</a>
+        <a href="reference.html">References</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="main.html">Dell &amp; CEO</a>
+    <a href="contact.html">Contact</a>
+    <a href="reference.html">References</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero hero-full">
+    <div class="hero-content">
+      <h1 class="hero-title">Michael Dell</h1>
+      <p class="hero-subtitle">Founder &amp; CEO, Dell Technologies</p>
+      <hr class="hero-divider">
+      <p class="hero-meta">1965 — Present · Visionary. Innovator. Leader.</p>
+    </div>
+    <a href="#ticker" class="scroll-down">↓</a>
+  </section>
+
+  <!-- Quote Ticker -->
+  <section id="ticker" class="ticker-strip">
+    <div class="ticker-track">
+      <span>Revolutionized the PC industry</span>
+      <span>$101B+ Revenue in 2023</span>
+      <span>Started Dell from his dorm room at UT Austin</span>
+      <span>Fortune 500 CEO since age 23</span>
+      <span>Revolutionized the PC industry</span>
+      <span>$101B+ Revenue in 2023</span>
+      <span>Started Dell from his dorm room at UT Austin</span>
+      <span>Fortune 500 CEO since age 23</span>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="card-grid-4">
+        <div class="card stats-card fade-in">
+          <div class="stat-number">1984</div>
+          <div class="stat-label">Founded Dell</div>
+        </div>
+        <div class="card stats-card fade-in">
+          <div class="stat-number">$101.6B</div>
+          <div class="stat-label">Company Revenue (FY2023)</div>
+        </div>
+        <div class="card stats-card fade-in">
+          <div class="stat-number">120,000+</div>
+          <div class="stat-label">Employees Worldwide</div>
+        </div>
+        <div class="card stats-card fade-in">
+          <div class="stat-number">~$50B</div>
+          <div class="stat-label">Net Worth</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser Navigation -->
+  <section class="section">
+    <div class="container">
+      <div class="teaser-grid">
+        <a href="about.html" class="teaser-card fade-in">
+          <img src="https://placehold.co/600x400/2A2A2A/F5F4F0?text=His+Story" alt="Michael Dell biography">
+          <div class="teaser-overlay">
+            <h3>His Story</h3>
+            <span>Learn about his life →</span>
+          </div>
+        </a>
+        <a href="main.html" class="teaser-card fade-in">
+          <img src="https://placehold.co/600x400/1A1A1A/FFFFFF?text=Dell+Technologies" alt="Dell Technologies">
+          <div class="teaser-overlay">
+            <h3>The CEO &amp; Company</h3>
+            <span>Explore his journey →</span>
+          </div>
+        </a>
+        <a href="contact.html" class="teaser-card fade-in">
+          <img src="https://placehold.co/600x400/2A2A2A/F5F4F0?text=Get+In+Touch" alt="Contact">
+          <div class="teaser-overlay">
+            <h3>Get In Touch</h3>
+            <span>Send a message →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h4>Michael Dell</h4>
+          <p>&copy; 2024 Michael Dell Biography</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="main.html">Dell &amp; CEO</a>
+          <a href="contact.html">Contact</a>
+          <a href="reference.html">References</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Educational project — not affiliated with Dell Technologies
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    // Hamburger Menu
+    const hamburgerBtn = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-menu a');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('active');
+    }));
+
+    // Scroll-Triggered Fade-In
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back to Top
+    const backToTop = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

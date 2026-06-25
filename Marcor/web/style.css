@@ -45,6 +45,7 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
+  padding-top: 70px;
 }
 
 a {
@@ -63,7 +64,7 @@ img {
 }
 
 .container {
-  max-width: var(--max-width);
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -96,23 +97,36 @@ h1, h2, h3, h4 {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.5px;
 }
 
+.nav-logo-img {
+  height: 20px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 32px;
 }
 
 .nav-links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.02em;
-  padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: color var(--transition-speed), border-color var(--transition-speed);
 }
@@ -135,6 +149,7 @@ h1, h2, h3, h4 {
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  flex-shrink: 0;
 }
 
 .hamburger span {
@@ -213,6 +228,8 @@ h1, h2, h3, h4 {
   min-height: 100vh;
 }
 
+
+
 .hero-medium {
   min-height: 60vh;
 }
@@ -222,7 +239,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 1700px;
   padding: 0 24px;
 }
 
